@@ -30,7 +30,7 @@ Listas das bibliotecas utilizadas, e que você poderá instalar utilizando o **P
 
 **pip install termcolor**
 
-**pip install cpuinfo**
+**pip install py-cpuinfo**
 
 **pip install psutil**
 
