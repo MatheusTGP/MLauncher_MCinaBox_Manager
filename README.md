@@ -63,7 +63,7 @@ Significando que as Bibliotecas estão sendo instaladas! Após isso, você pode 
 Dentro do **PyDroid 3**, caso estiver dando erro de algum módulo não instalado,
 Vá até o Terminal novamente e execute o **pip install {nome do módulo}**, espero que tenha entendido!
 
-# Créditos / Aviso Legal
+# 💡 | Créditos / Aviso Legal
 Por Favor, NÃO remova os créditos que estão presentes no Código!
 Caso você for fazer uma Fork, mencione os Créditos Abaixo:
 
