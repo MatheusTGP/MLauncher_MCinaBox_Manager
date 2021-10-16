@@ -22,4 +22,4 @@ jobs:
         pip install py-cpuinfo
     - name: Executar Código do Gerenciador
       run: |
-        MCinaBox-ManagerV1.0.py
+        python MCinaBox-ManagerV1.0.py
