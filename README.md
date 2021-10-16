@@ -63,7 +63,7 @@ Caso você for fazer uma Fork, mencione os Créditos Abaixo:
 # Funções do Gerenciador
 **Todas as funções Atualmente adicionadas no código.**
 - [x] Limpador de Logs
-- [x] Instalador do MCinaBox
+- [x] Instalador do MCinaBox for x32 e x64
 - [x] Gerenciador de Arquitetura
 - [ ] Otimizador de FPS (não-implementado)
 - [x] Gerenciador de Memória RAM
