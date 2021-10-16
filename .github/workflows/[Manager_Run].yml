@@ -19,7 +19,7 @@ jobs:
         pip install wget
         pip install psutil
         pip install termcolor
-        pip install cpuinfo
+        pip install py-cpuinfo
     - name: Executar Código do Gerenciador
       run: |
         MCinaBox-ManagerV1.0.py
