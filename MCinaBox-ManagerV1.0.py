@@ -1,3 +1,9 @@
+# Creator =  MatheusTGamerPro ©
+# GitHub = github.com/MatheusTGamerPro
+# Version = 1.0_Beta
+# Release = 16/10/2021 - Beta
+# NOT remove the Crédits
+
 import os
 from os import makedirs
 import shutil
