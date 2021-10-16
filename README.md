@@ -1,14 +1,25 @@
-# MCinaBox Manager 1.0
+# ⚠️ | MCinaBox Manager
 Gerenciador e Organizador com muitas funções inclusas funcionando para MCinabox, instale OptFine, Otimizador, Limpeza e entre outras coisas do Gerenciador! Disponível em PT-BR e EN-US mais em breve..
 
-# Como Funciona?
+# 🇺🇸 | Set-Language
+🇺🇸 • **Please translate the page into your native language for a better experience!**
+
+🇪🇸 • **¡Traduzca la página a su idioma nativo para una mejor experiencia!**
+
+🇺🇸 • **About the Code:** For the time being the Code is in the developed Language: **PT-BR**,
+ The code translation will be done for everyone to use without problems!
+
+🇪🇸 • **Acerca del Código:** Por el momento, el Código está en el Idioma desarrollado: **PT-BR**,
+  ¡La traducción del código se hará para que todos la utilicen sin problemas!
+
+# ❗ | Como Funciona?
 Você poderá executar um gerenciador com funções exclusivas e programadas
 Para funcionar dentro do MCinaBox, nele você pode baixar o Próprio MCinaBox
 Funcionando em todas as arquiteturas **x32** e **x64**, limpe os logs de registros utilizando ele
 Otimize o MCinaBox utilizando o nosso RAMBoost integrado (Testes), veja informações de seu dispositivo
 Utilizando o script e bibliotecas dentro do Código e entre outras funções.
 
-# Bibliotecas [ Módulos ]
+# 📊 | Bibliotecas
 As bíbliotecas nesse código é realmente muito importante
 Caso a contrário o seu Código ficará travado em uma parte. Abaixo terá algumas das
 Listas das bibliotecas utilizadas, e que você poderá instalar utilizando o **PIP**:
@@ -26,7 +37,7 @@ Listas das bibliotecas utilizadas, e que você poderá instalar utilizando o **P
 Estes são os módulos mais necessários que devem ser importados e instalados
 Dentro do código, você poderá executa-lo pelo app da GooglePlay: **PyDroid3**
 
-# Como Utilizar no Android
+# 📱 | Como Utilizar no Android
 Nessa etapa você precisará prestar bastante atenção!
 O código foi produzido totalmente pelo Android, ou seja, você deve executa-lo por um android
 Então para que isso seja possível, estou trazendo aqui um Passo a Passo a vocês, vem comigo!
@@ -60,7 +71,26 @@ Caso você for fazer uma Fork, mencione os Créditos Abaixo:
 
 🇺🇸 • Credits of Developer: **MatheusTGamerPro**
 
-# Funções do Gerenciador
+# 🛡️ | Sobre o MCinaBox
+O MCinaBox é um Launcher de Minecraft Java edition no Android possibitando de o usuário
+Jogar o game dentro de seu dispositivo, o Manager foi desenvolvido para gerenciar e organizar o lançador
+Os criadores originais do MCinaBox estará Abaixo:
+
+⚒️ MCinaBox ⚒️
+
+⬇️**Developers**⬇️
+- [x] **LongJunyu2**
+
+- [x] **CosineMath**
+
+- [x] **Iscle**
+
+⬇️**Language**⬇️
+- [x] Java
+
+Também contém Outros Contribuidores do Launcher!
+
+# ⚒️ | Funções do Gerenciador
 **Todas as funções Atualmente adicionadas no código.**
 - [x] Limpador de Logs
 - [x] Instalador do MCinaBox for x32 e x64
