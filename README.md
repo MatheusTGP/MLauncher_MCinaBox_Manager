@@ -1,3 +1,4 @@
+[![Construir Arquivo do Gerenciador](https://github.com/MatheusTGamerPro/MCinaBox_Manager/actions/workflows/%5BManager_MCinaBox_Run%5D.yml/badge.svg)](https://github.com/MatheusTGamerPro/MCinaBox_Manager/actions/workflows/%5BManager_MCinaBox_Run%5D.yml)
 # ⚠️ | MCinaBox Manager
 Gerenciador e Organizador com muitas funções inclusas funcionando para MCinabox, instale OptFine, Otimizador, Limpeza e entre outras coisas do Gerenciador! Disponível em PT-BR e EN-US mais em breve..
 
