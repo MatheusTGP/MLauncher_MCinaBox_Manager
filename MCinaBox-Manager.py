@@ -13,9 +13,10 @@ from time import sleep
 from cpuinfo import get_cpu_info
 from psutil import virtual_memory
 from platform import system
+import requests
 
 # Módulos de instalação:
-# Abra o Terminale digite um por vez:
+# Abra o Terminal e digite um por vez:
 			
 # pip install wget
 # pip install termcolor
@@ -33,6 +34,14 @@ MEMORY_RAM = virtual_memory().total
 FORMAT_RAM = str(MEMORY_RAM)
 # Verify System Architecture for the MCinaBox
 
+def Verificar_Internet (url ='http://www.google.com'):
+    try:
+        CONECT = requests.head(url)
+        return True
+
+    except requests.ConnectionError:
+        return False
+WI_FI = Verificar_Internet()
 
 def Manager_Main ():
 	print(colored("[===========[ MCinaBox_Manager 1.0-Alpha ]===========]",'white',attrs=["bold"]))
@@ -57,20 +66,21 @@ def Manager_Main ():
 	select = int(input(colored("\nOpção: ","white",attrs=["bold"])))
 	
 	if select == 1:
-		print("[=============================]")
-		print(colored("Instalado do APK & Runtime do MCinaBox",'white',attrs=["bold"]))
-		
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		sleep(1)
+		print(colored("Instalador do MCinaBox Para Android",'white',attrs=["bold","underline"]))
+		sleep(1)
 		print(colored("\n Você está prestes a Instalar o MCinaBox Minecraft Java no seu Dispositivo, junto contem o pacote do APK+Runtime,não se preocupe o próprio código identifica sua arquitetura!",'cyan',attrs=["bold"]))
-		
-		confirm_install = input("\nVocê Deseja Instalar o APK e Runtime do MCinaBox? [s/n]: ")
+		sleep(1)
+		confirm_install = input("\nVocê Deseja Instalar o APK + Runtime do MCinaBox? [s/n]: ")
 		if confirm_install == "s":
-			print("[=============================]")
+			print(colored("[=======================================]",'white',attrs=["bold"]))
 			sleep(1)
-			print(colored("Verificando Arquitetura do Sistema...",'green'))
+			print(colored("Verificando Arquitetura do Sistema...",'white',attrs=["bold","underline"]))
 			sleep(1)
 			if ARCHITECTURE == 32:
 				sleep(1)
-				print(colored(f"Arquitetura Detectada: {ARCHITECTURE}-Bits",'yellow'))
+				print(colored(f"\nArquitetura Detectada: {ARCHITECTURE}-Bits",'yellow',attrs=["bold"]))
 				sleep(1)
 				
 				APK = 'https://github.com/AOF-Dev/MCinaBox/releases/download/v0.1.4-p5/MCinaBox.v0.1.4-p5.apk'
@@ -78,20 +88,27 @@ def Manager_Main ():
 				RUNTIME_32 = 'https://github.com/AOF-Dev/MCinaBox/releases/download/v0.1.4-p2/aarch32-20200928.tar.xz'
 				
 				locate = '/storage/emulated/0/MCinaBox_Manager/MCinaBox_Installed'
-				print(colored("Fazendo instalação do APK: ",'white',attrs=["bold"]))
 				
-				download(APK,locate)
+				print(colored("\n[ Start ] [Info-Installer_x32 ] : Baixando APK do MCinaBox: ",'magenta',attrs=["bold"]))
 				
-				sleep(1)
-				print(colored(f"\nFazendo Instalação da Runtime {ARCHITECTURE}-Bits: ",'white',attrs=["bold"]))
+				if WI_FI == True:
+					download(APK,locate)
 				
-				download(RUNTIME_32,locate)
+					sleep(1)
+					print(colored(f"\n[ Start ] [Info-Installer_x32 ] : Baixando Java o Runtime: {ARCHITECTURE}-Bits: ",'magenta',attrs=["bold"]))
 				
-				print(colored("\nInstalação Concluída com sucesso!",'green'))
-				print("[=============================]")
-				sleep(2)
-				os.system('clear')
-				Manager_Main()
+					download(RUNTIME_32,locate)
+				
+					print(colored("\n[ Finish ] [ Info-Installer_x32 ] : Download do MCinaBox Finalizado.",'green'))
+					print(colored("[=======================================]",'white',attrs=["bold"]))
+					sleep(2)
+					os.system('clear')
+					Manager_Main()
+				elif WI_FI == False:
+					print(colored("\nErro: Você não está conectado a internet, retornando...",'red',attrs=["bold"]))
+					sleep(5)
+					os.system('clear')
+					Manager_Main()
 
 			elif ARCHITECTURE == 64:
 					print(colored(f"Arquitetura Detectada: {ARCHITECTURE}-Bits",'yellow'))
@@ -102,16 +119,21 @@ def Manager_Main ():
 					RUNTIME_64 = 'https://github.com/AOF-Dev/MCinaBox/releases/download/v0.1.4-p2/aarch64-20200927.tar.xz'
 					
 					locate = '/storage/emulated/0/MCinaBox_Manager/MCinaBox_Installed'
-					print(colored("Fazendo instalação do APK: ",'white',attrs=["bold"]))
+					print(colored("\n[ Start ] [ Info-Installer_x64 ] : Baixando APK do MCinaBox: ",'white',attrs=["bold"]))
+					if WI_FI == True:
+						download(APK,locate)
 					
-					download(APK,locate)
-					
-					sleep(1)
-					print(colored(f"\nFazendo Instalação da Runtime {ARCHITECTURE}-Bits: ",'white',attrs=["bold"]))
-					download(RUNTIME_64,locate)
-					sleep(1)
-					print(" Finalizado! ")
-					print("[=============================]")
+						sleep(1)
+						print(colored(f"[ Start ] [ Info-Installer_x64] : Baixando o Java Runtime {ARCHITECTURE}-Bits: ",'magenta',attrs=["bold"]))
+						download(RUNTIME_64,locate)
+						sleep(1)
+						print(colored(f"\n[ Start ] [ Info-Installer-Finish] : MCinaBox Baixado com Sucesso! ",'magenta',attrs=["bold"]))
+					elif WI_FI == False:
+						print(colored("\nErro: Você não está conectado a internet, retornando...",'red',attrs=["bold"]))
+						sleep(5)
+						os.system('clear')
+						Manager_Main()
+					print(colored("[=======================================]",'white',attrs=["bold"]))
 					sleep(2)
 					os.system('clear')
 					Manager_Main()
