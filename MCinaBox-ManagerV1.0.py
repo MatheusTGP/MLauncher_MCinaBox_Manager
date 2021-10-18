@@ -294,7 +294,7 @@ def Setup ():
 		else:
 			print(colored('Setup Cancelado','red'))
 
-		print(colored("MCinaBox Manager Instalado!",'green',attrs=["Bold"]))
+		print(colored("MCinaBox Manager Instalado!",'green',attrs=["bold"]))
 		sleep(2)
 		os.system('clear')
 		Manager_Main()		
