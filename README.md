@@ -50,7 +50,7 @@ Então para que isso seja possível, estou trazendo aqui um Passo a Passo a voc�
 
 **Passo 1/5**: Primeiramente Acesse a GooglePlay e Instale o App: [PyDroid3 - Download](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3)
 
-**Passo 2/5**: Entre e Instale o Python dentro do App, Após isso, Pressione os três botões deitados
+**Passo 2/5**: Entre e Aguarde o App instalar, Após isso, Pressione os três botões deitados
 
 **Passo 3/5**: Vá em "Terminal", após isso,digite os seguintes comandos abaixo:
 
