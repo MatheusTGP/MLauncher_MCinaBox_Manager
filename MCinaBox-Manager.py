@@ -20,19 +20,19 @@ import requests
 			
 # pip install wget
 # pip install termcolor
-# pip install cpuinfo
+# pip install py-cpuinfo
 # pip install psutil
 
 # Você precisa instalar Todos os Módulos Acima!
 
-
-# Info System Configuration...
 SYSTEM = system()
 ARCHITECTURE = get_cpu_info()["bits"]
-PROCESSADOR = get_cpu_info()["hardware_raw"]
-MEMORY_RAM = virtual_memory().total
-FORMAT_RAM = str(MEMORY_RAM)
-# Verify System Architecture for the MCinaBox
+PROCESSADOR = get_cpu_info()["brand_raw"]
+HARDWARE = get_cpu_info()["hardware_raw"]
+MEMORY_RAM_TOTAL = virtual_memory().total
+MEMORY_RAM_FREE = virtual_memory().available
+FORMAT_RAM_TOTAL = str(MEMORY_RAM_TOTAL)
+FORMAT_RAM_FREE = str(MEMORY_RAM_FREE)[0:3]
 
 def Verificar_Internet (url ='http://www.google.com'):
     try:
@@ -43,8 +43,10 @@ def Verificar_Internet (url ='http://www.google.com'):
         return False
 WI_FI = Verificar_Internet()
 
+# Start The Manager
+
 def Manager_Main ():
-	print(colored("[===========[ MCinaBox_Manager 1.0-Alpha ]===========]",'white',attrs=["bold"]))
+	print(colored("[===========[ Painel de Controle MCinaBox v1.5 ]===========]",'white',attrs=["bold"]))
 	
 	print(colored("\n[1] - Instalar MCinaBox",'green'))
 	
@@ -52,18 +54,20 @@ def Manager_Main ():
 	
 	print(colored("\n[3] - Gerar Pastas do MCinaBox",'green'))
 	
-	print(colored("\n[4] - Deletar MCinaBox (Beta)",'green'))
+	print(colored("\n[4] - Deletar MCinaBox",'green'))
 	
 	print(colored("\n[5] - Sobre o Manager",'green'))
 	
 	print(colored("\n[6] - Meu Aparelho",'green'))
 	
-	print(colored("\n[7] - Otimizador de FPS (Em Teste)",'yellow'))
+	print(colored("\n[7] - Otimizador de FPS (Em Teste)",'magenta'))
 	
-	print(colored("\n[8] - Fechar Gerenciador\n",'red',attrs=["bold"]))
-	print(colored("[==================[ MatheusTGP© ]=================]",'white',attrs=["bold"]))
+	print(colored("\n[8] - Desinstalar o Manager",'red'))
+	
+	print(colored("\n[9] - Fechar Gerenciador\n",'red',attrs=["bold"]))
+	print(colored("[======================[ MatheusTGP© ]===================]",'white',attrs=["bold"]))
 
-	select = int(input(colored("\nOpção: ","white",attrs=["bold"])))
+	select = int(input(colored("\nOpção: ","yellow",attrs=["bold"])))
 	
 	if select == 1:
 		print(colored("[=======================================]",'white',attrs=["bold"]))
@@ -144,25 +148,27 @@ def Manager_Main ():
 			Manager_Main()
 
 	elif select == 2:
-		print("[=============================]")
+		print(colored("[=======================================]",'white',attrs=["bold"]))
 		print(colored("Limpador de Registros (LOGS)",'white',attrs=["bold"]))
-		delete_logs = input(colored("\nVocê deseja Excluir os Registros Logs [s/n]: ",'white',attrs=["bold"]))
+		delete_logs = input(colored("\nVocê deseja Excluir os Registros Logs [s/n]: ",'yellow',attrs=["bold"]))
 		if delete_logs == "s":
 			DIR_LOGS = r'/storage/emulated/0/MCinaBox/gamedir/logs'
 			if os.path.exists(DIR_LOGS):
 				sleep(1)
-				print(colored("Deletando Registro de Logs...",'red'))
+				print(colored("[ Start ] [ Delete-Logs ] : Deletando Registro de Logs...",'red'))
 				
 				shutil.rmtree(DIR_LOGS)
 				
 				sleep(1)
-				print(colored("Logs Deletado com Sucesso!",'green',attrs=["bold"]))
-				print("[=============================]")
+				print(colored("[ Start ] [ Delete-Logs ] : Registros deletados.",'green',attrs=["bold"]))
+				print(colored("[=======================================]",'white',attrs=["bold"]))
+				
 				sleep(2)
 				os.system('clear')
 				Manager_Main()
 			else:
-				print(colored("Não a Registros de Logs!",'red',attrs=["bold"]))
+				print(colored("\nNão a Registros de Logs!",'red',attrs=["bold"]))
+				print(colored("[=======================================]",'white',attrs=["bold"]))
 				sleep(2)
 				os.system('clear')
 				Manager_Main()
@@ -177,8 +183,8 @@ def Manager_Main ():
 		
 		
 	elif select == 3:
-		print("[=============================]")
-		print(colored("Construir Pastas do MCinaBox",'white',attrs=["bold"]))
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		print(colored("Gerador de Pastas do MCinaBox",'white',attrs=["bold","underline"]))
 		directory_mcinabox = r'/storage/emulated/0/MCinaBox/gamedir'
 		confirmar = input("Deseja Gerar a Pasta 'MCinaBox/gamedir'[s/n]: ")
 		if confirmar == "s":
@@ -190,6 +196,7 @@ def Manager_Main ():
 				print(colored("Diretório Criado com Sucesso!",'green',attrs=["bold"]))
 			except FileExistsError:
 				print(colored("O Diretório do MCinaBox já existe!",'red',attrs=["bold"]))
+				print(colored("[=======================================]",'white',attrs=["bold"]))
 				sleep(2)
 				os.system('clear')
 				Manager_Main()
@@ -199,7 +206,7 @@ def Manager_Main ():
 			os.system('clear')
 			Manager_Main()
 	elif select == 4:
-		print("[=============================]")
+		print(colored("[=======================================]",'white',attrs=["bold"]))
 		print(colored("Exclusão do MCinaBox Diretório",'white',attrs=["bold"]))
 		delete_mcinabox = input("\nVocê realmente quer deletar o diretório MCinaBox [s/n]: ")
 		if delete_mcinabox == "s":
@@ -211,13 +218,15 @@ def Manager_Main ():
 			shutil.rmtree(MCinaBox_dirfull)
 			
 			sleep(1)
-			print(colored("Pasta do MCinaBox Excluída!","red",attrs=["bold"]))
+			print(colored("\nPasta do MCinaBox Excluída!","red",attrs=["bold"]))
+			print(colored("[=======================================]",'white',attrs=["bold"]))
 			sleep(2)
 			os.system('clear')
 			Manager_Main()
 
 		elif delete_mcinabox == "n":
 			print("Cancelado, Obrigado pelo escolha! \n")
+			print(colored("[=======================================]",'white',attrs=["bold"]))
 			sleep(1)
 			os.system('clear')
 			Manager_Main()
@@ -227,30 +236,40 @@ def Manager_Main ():
 		print("[=============================]")
 		print(colored("Sobre o MCinaBox Manager","white",attrs=["bold"]))
 		
-		print(colored("\nMCinaBox Manager foi feito na intenção de ajudar a deixar o lançador mais rápido é deixa-lo mais organizado, o código fará com que exclua e adicione Items e pastas para deixar o MCinaBox mais ágil, em breve será adicionado mais Funções, acessando nosso Site na GitHub você pode mencionar um Bug ou até mesmo instalar as versões mais Recentes do Código!","white"))
+		print(colored("\nMCinaBox Manager foi Construido na intenção de ajudar a deixar o lançador mais rápido é deixa-lo mais organizado, o código fará com que exclua e adicione Items e pastas para deixar o MCinaBox mais ágil, em breve será adicionado mais Funções, acessando nosso Site na GitHub você pode mencionar um Bug ou até mesmo instalar as versões mais Recentes do Código!","white"))
 		
 		print(colored("\nDesenvolvedor: MatheusTGamerPro ",'green'))
 		print(colored("Versão: V1.0-Beta\n",'white'))
+		
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		
 		back = input("Para Voltar digite 'voltar': ")
 		if back == "voltar":
 			os.system('clear')
 			Manager_Main()
 		else:
 			print("o Usuário Optou para Cancelar")
-		print("[=============================]")
+		print(colored("[=======================================]",'white',attrs=["bold"]))
 
 	elif select == 6:
-		print("[=============================]")
-		print(colored("\nVerificando seu Dispositivo...",'white',attrs=["bold"]))
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		print(colored("\nCarregando Informações do dispositivo...",'white',attrs=["bold"]))
 		sleep(1)
-		info = [SYSTEM, ARCHITECTURE, PROCESSADOR, FORMAT_RAM]
+		info = [SYSTEM, ARCHITECTURE, PROCESSADOR, HARDWARE , FORMAT_RAM_TOTAL, FORMAT_RAM_FREE]
 		
-		print(f'''\nSistema: {info[0]}
+		print(colored(f'''\nSistema: {info[0]}-Android
+
 Bits da Arquitetura: {info[1]}-Bits
+
 Processador: {info[2]}
-Memória RAM: {FORMAT_RAM[0:1]}GB\n''')
-		print("[=============================]")
-		back = input(colored("Para voltar ao menu digite 'voltar': ",'white'))
+
+Hardware da CPU: {info[3]}
+
+Memória RAM Total: {info[4][0:1]}GB
+
+Memória RAM Livre: {info[5][0:1]}.{info[5][0:2]}GB\n''','white'))
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		back = input(colored("Para voltar ao menu digite 'voltar': ",'yellow',attrs=["bold"]))
 		if back == "voltar":
 			os.system('clear')
 			Manager_Main()
@@ -260,25 +279,53 @@ Memória RAM: {FORMAT_RAM[0:1]}GB\n''')
 			os.system('clear')
 			Manager_Main()
 
-		print("[=============================]")
+		print(colored("[=======================================]",'white',attrs=["bold"]))
 		
 	elif select == 7:
-		print("Verificando...")
+		print("Coletando dados do FPS Boost...")
 		sleep(1)
-		print(colored("Desculpe! está função ainda não foi implementada aguarde até o próximo Update.",'red',attrs=["bold"]))
+		print(colored("Desculpe! está função ainda não foi implementada aguarde até os próximos Update.",'red',attrs=["bold"]))
 		sleep(2)
 		os.system('clear')
 		Manager_Main()
 		
 	elif select == 8:
-		exit("Gerenciador Fechado")
-	elif select > 8:
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		
+		print(colored("Carregando Setup Desinstalador do Manager",'white',attrs=["bold","underline"]))
+		sleep(2)
+		directory_manager = r'/storage/emulated/0/MCinaBox_Manager'
+		uninstall_confirm = input(colored("Você deseja Desinstalar o Gerenciador? [s/n]: ",'yellow',attrs=["bold"]))
+		
+		if uninstall_confirm == "s":
+			print(colored("\n[ Startup ] [ Manager-Uninstall ] : Fazendo a Desinstalação...",'red',attrs=["bold"]))
+			sleep(2)
+			
+			shutil.rmtree(directory_manager)
+			
+			print(colored("\n[ Startup ] [ Manager-Uninstall ] : Desinstalação Completada",'green',attrs=["bold"]))
+			sleep(1)
+			print(colored("\nAté a Próxima, Voltando ao Lobby...",'green',attrs=["bold"]))
+			print(colored("[=======================================]",'white',attrs=["bold"]))
+			sleep(2)
+			os.system('clear')
+			Setup()
+		elif uninstall_confirm == "n":
+			print(colored("\nObrigado pela Escolha! Retornando...",'green',attrs=["bold"]))
+			sleep(2)
+			os.system('clear')
+			Manager_Main()		
+		
+	elif select == 9:
+		exit("Gerenciador Fechado, até a Próxima!")
+		
+	elif select > 9:
 		print(colored("Está Opção não existe\n",'red',attrs=["bold"]))
 		sleep(1)
 		os.system('clear')
 		Manager_Main()
 sleep(1)
-print(colored("Gerenciador do MCinaBox Versão Beta, Carregando informações...\n",'blue'))
+print(colored("[ MCinaBox Manager - V1.5 ]\n",'white',attrs=["bold","underline"]))
 
 def Setup ():
 	directory_manager = r'/storage/emulated/0/MCinaBox_Manager'
@@ -291,32 +338,39 @@ def Setup ():
 		Manager_Main()
 	else:
 		sleep(1)
-		print(colored("Seja Bem Vindo ao MCinaBox Manager! \nCriador: MatheusTGamerPro\n","white"))
-		setup_config = input(colored("Você deseja instalar o MCinaBox Manager? [s/n]: ",'white',attrs=["bold"]))
+		print(colored("Seja Bem Vindo ao MCinaBox Manager! \nCriador: MatheusTGamerPro\n","magenta",attrs=["bold"]))
+		print(colored("[=======================================]",'white',attrs=["bold"]))
+		setup_config = input(colored("Você deseja instalar o MCinaBox Manager? [s/n]: ",'yellow',attrs=["bold"]))
 		if setup_config == "s":
-			print(colored("Criando Diretório...",'green'))
+			print(colored("[=======================================]",'white',attrs=["bold"]))
+			print(colored("\nAguarde, Fazendo a instalação do Gerenciador...",'green',attrs=["bold","underline"]))
 			sleep(1)
-			print(colored("80% █████▒▒ Directory Create1",'green',attrs=["bold"]))
+			print(colored("\n[ 80% ] [ █████▒▒ ] : Gerando diretório primário...",'green',attrs=["bold"]))
 			
 			create_dir1 = makedirs(directory_manager)
 			
 			sleep(1)
-			print(colored("90% ██████▒ Directory Create 2",'green',attrs=["bold"]))
+			print(colored("\n [ 93% ][ ██████▒ ] : Gerando Diretório do OptFine...",'green',attrs=["bold"]))
 			
 			create_dir2 = makedirs(directory_optfine)
 			create_dir3 = makedirs(directory_installedMC)
 			
-			sleep(1)
-			print(colored("100% ███████ Finish",'green',attrs=["bold"]))
-			print(colored("Manager Instalado com Sucesso, Abrindo Menu...",'yellow',attrs=["bold"]))
-			sleep(3)
-			os.system('clear')
-			Manager_Main()
+			sleep(2)
+			print(colored("\n  [ 100%] [ ███████ ] : Instalação Finalizada.",'green',attrs=["bold"]))
+			print(colored("\nGerenciador foi instalado com sucesso!",'yellow',attrs=["bold"]))
+			print(colored("[=======================================]",'white',attrs=["bold"]))
+			confirm_startup = input(colored("Deseja abrir o Menu? [s/n]: ",'yellow',attrs=["bold"]))
+			if confirm_startup == "s":
+				os.system('clear')
+				Manager_Main()
+			elif confirm_startup == "n":
+				print("Okay, Quando desejar entrar, somente inicie o Código!")
 			
 		else:
-			print(colored('Setup Cancelado','red'))
+			print(colored('Setup Instalador não finalizado.','red',attrs=["bold"]))
+			exit()
 
-		print(colored("MCinaBox Manager Instalado!",'green',attrs=["bold"]))
+		print(colored("MCinaBox Manager Instalado!",'green',attrs=["bold"])) # Corrigir erro do Bold
 		sleep(2)
 		os.system('clear')
 		Manager_Main()		
