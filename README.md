@@ -1,7 +1,7 @@
 [![Construir Arquivo do Gerenciador](https://github.com/MatheusTGamerPro/MCinaBox_Manager/actions/workflows/%5BManager_MCinaBox_Run%5D.yml/badge.svg)](https://github.com/MatheusTGamerPro/MCinaBox_Manager/actions/workflows/%5BManager_MCinaBox_Run%5D.yml)
 ![Github Code](https://img.shields.io/static/v1?label=Compatibilidade&message=Android&color=blue)
 ![Github Code](https://img.shields.io/static/v1?label=Python&message=100%&color=orange)
-![Github Code](https://img.shields.io/static/v1?label=Versão-Atual&message=1.0&color=magenta)
+![Github Code](https://img.shields.io/static/v1?label=Versão-Atual&message=1.5-Release&color=magenta)
 <a href="https://discord.gg/NTAAMC6TYu" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
 
 # ⚠️ | MCinaBox Manager
@@ -48,7 +48,7 @@ Nessa etapa você precisará prestar bastante atenção!
 O código foi produzido totalmente pelo Android, ou seja, você deve executa-lo por um android
 Então para que isso seja possível, estou trazendo aqui um Passo a Passo a vocês, vem comigo!
 
-**Passo 1/5**: Primeiramente Acesse a GooglePlay e Instale o App: **PyDroid 3**
+**Passo 1/5**: Primeiramente Acesse a GooglePlay e Instale o App: [PyDroid3 - Download](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3)
 
 **Passo 2/5**: Entre e Instale o Python dentro do App, Após isso, Pressione os três botões deitados
 
@@ -66,8 +66,15 @@ Comando 4: **pip install wget**
 
 Após fazer os seguintes comandos, você percebe que cada comandos irá iniciar uma instalação,
 Significando que as Bibliotecas estão sendo instaladas! Após isso, você pode abrir o seu código **py**
-Dentro do **PyDroid 3**, caso estiver dando erro de algum módulo não instalado,
+Dentro do [PyDroid 3](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3), caso estiver dando erro de algum módulo não instalado,
 Vá até o Terminal novamente e execute o **pip install {nome do módulo}**, espero que tenha entendido!
+
+# ⭐ | Alterar Tema do Código no Terminal (PyDroid)
+
+Para deixar o Código mais **"bonito"** de se visualizar siga os passos abaixo!
+![change-theme](Tutorial-Theme.gif)
+Após Isso o seu Terminal ficará com a coloração do Linux, deixando o código
+Mais confortável de visualizar a coloração (Termcolor), é recomendavel que você faça isso.
 
 # 💡 | Créditos / Aviso Legal
 Por Favor, NÃO remova os créditos que estão presentes no Código!
@@ -82,7 +89,7 @@ O MCinaBox é um Launcher de Minecraft Java edition no Android possibitando de o
 Jogar o game dentro de seu dispositivo, o Manager foi desenvolvido para gerenciar e organizar o lançador
 Os criadores originais do MCinaBox estará Abaixo:
 
-⚒️ MCinaBox ⚒️
+Site Oficial do MCinaBox: [AOF-MCinaBox](https://github.com/AOF-Dev/MCinaBox)
 
 ⬇️**Developers**⬇️
 - [x] **LongJunyu2**
@@ -91,20 +98,20 @@ Os criadores originais do MCinaBox estará Abaixo:
 
 - [x] **Iscle**
 
-⬇️**Language**⬇️
-- [x] Java
-
 Também contém Outros Contribuidores do Launcher!
+O MCinaBox no momento não contem novas atualizações, Mais em breve poderei criar uma Fork
+Para um novo desenvolvimento do MCinaBox!
 
 # ⚒️ | Funções do Gerenciador
 **Todas as funções Atualmente adicionadas no código.**
 - [x] Limpador de Logs
 - [x] Instalador do MCinaBox for x32 e x64
 - [x] Gerenciador de Arquitetura
-- [ ] Otimizador de FPS (não-implementado)
+- [ ] Otimizador de FPS (Produzindo, em Testes)
 - [x] Gerenciador de Memória RAM
 - [ ] Instalador de OptiFine (não implementado)
 - [ ] Instalador de Forge, LabyMod, Clients (breve)
 - [ ] Instador de Mods
+- [x] Execuçao do código pelo Android: [Download](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3)
 
 Novas funcionalidades serão implementadas em breve
