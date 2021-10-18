@@ -24,4 +24,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: MCinaBox_Manager_Debug
-          path: MCinaBox-ManagerV1.0.py
+          path: MCinaBox-Manager.py
