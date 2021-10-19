@@ -47,6 +47,8 @@ Dentro do código, você poderá executa-lo pelo app da GooglePlay: **PyDroid3**
 Nessa etapa você precisará prestar bastante atenção!
 O código foi produzido totalmente pelo Android, ou seja, você deve executa-lo por um android
 Então para que isso seja possível, estou trazendo aqui um Passo a Passo a vocês, vem comigo!
+**Nota:** Você também pode executar o Código pelo Termux instale ele por aqui:
+[Termux_Download](https://cdn.down-apk.com/com.termux/Termux_0.117_apkcombo.com.apk?ecp=Y29tLnRlcm11eC8wLjExNy8xMTcuNDkxZjIwN2UyODlhYzA1YmNiMzljYTQzNmI1MjE4ZjZhZTgwMWRiZC5hcGs=&iat=1634663989&sig=efb7ba7619370b2e26d0e4f5683b26a9&size=85749239&from=cf&version=latest)
 
 **Passo 1/5**: Primeiramente Acesse a GooglePlay e Instale o App: [PyDroid3 - Download](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3)
 
