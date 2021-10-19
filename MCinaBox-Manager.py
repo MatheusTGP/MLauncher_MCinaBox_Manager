@@ -13,7 +13,7 @@ from time import sleep
 from cpuinfo import get_cpu_info
 from psutil import virtual_memory
 from platform import system
-import requests
+from requests import head
 
 # Módulos de instalação:
 # Abra o Terminal e digite um por vez:
@@ -22,13 +22,12 @@ import requests
 # pip install termcolor
 # pip install py-cpuinfo
 # pip install psutil
+# pip install requests
 
 # Você precisa instalar Todos os Módulos Acima!
 
 SYSTEM = system()
 ARCHITECTURE = get_cpu_info()["bits"]
-PROCESSADOR = get_cpu_info()["brand_raw"]
-HARDWARE = get_cpu_info()["hardware_raw"]
 MEMORY_RAM_TOTAL = virtual_memory().total
 MEMORY_RAM_FREE = virtual_memory().available
 FORMAT_RAM_TOTAL = str(MEMORY_RAM_TOTAL)
@@ -36,7 +35,7 @@ FORMAT_RAM_FREE = str(MEMORY_RAM_FREE)[0:3]
 
 def Verificar_Internet (url ='http://www.google.com'):
     try:
-        CONECT = requests.head(url)
+        CONECT = head(url)
         return True
 
     except requests.ConnectionError:
@@ -255,19 +254,15 @@ def Manager_Main ():
 		print(colored("[=======================================]",'white',attrs=["bold"]))
 		print(colored("\nCarregando Informações do dispositivo...",'white',attrs=["bold"]))
 		sleep(1)
-		info = [SYSTEM, ARCHITECTURE, PROCESSADOR, HARDWARE , FORMAT_RAM_TOTAL, FORMAT_RAM_FREE]
+		info = [SYSTEM, ARCHITECTURE, FORMAT_RAM_TOTAL, FORMAT_RAM_FREE]
 		
 		print(colored(f'''\nSistema: {info[0]}-Android
 
 Bits da Arquitetura: {info[1]}-Bits
 
-Processador: {info[2]}
+Memória RAM Total: {info[2][0:1]}GB
 
-Hardware da CPU: {info[3]}
-
-Memória RAM Total: {info[4][0:1]}GB
-
-Memória RAM Livre: {info[5][0:1]}.{info[5][0:2]}GB\n''','white'))
+Memória RAM Livre: {info[3][0:1]}.{info[3][0:2]}GB\n''','white'))
 		print(colored("[=======================================]",'white',attrs=["bold"]))
 		back = input(colored("Para voltar ao menu digite 'voltar': ",'yellow',attrs=["bold"]))
 		if back == "voltar":
