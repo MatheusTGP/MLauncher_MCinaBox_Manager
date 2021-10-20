@@ -109,6 +109,7 @@ Para um novo desenvolvimento do MCinaBox!
 **Todas as funções Atualmente adicionadas no código.**
 - [x] Limpador de Logs
 - [x] Instalador do MCinaBox for x32 e x64
+- [ ] Suporte para PojavLaucher (Breve)
 - [x] Gerenciador de Arquitetura
 - [ ] Otimizador de FPS (Produzindo, em Testes)
 - [x] Gerenciador de Memória RAM
