@@ -25,7 +25,7 @@ jobs:
     - name: Build MLauncher Artifact in PT-BR
       uses: actions/upload-artifact@v2
       with:
-          name: MCLauncher_Manager_Debug_PT-BR
+          name: MLauncher_Manager_Debug_PT-BR
           path: MLauncher_MCinaBox-BR.py
     - name: Build MLauncher Artifact in EN-US
       uses: actions/upload-artifact@v2
