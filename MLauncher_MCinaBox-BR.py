@@ -4,27 +4,17 @@
 # Release = 16/10/2021 - Beta
 # NOT remove the Crédits
 
+import sys
+from psutil import virtual_memory
+from termcolor import colored
+from wget import download
 import os
 from os import makedirs
 import shutil
-from wget import download
-from termcolor import colored
 from time import sleep
 from cpuinfo import get_cpu_info
-from psutil import virtual_memory
 from platform import system
 from requests import head
-
-# Módulos de instalação:
-# Abra o Terminal e digite um por vez:
-			
-# pip install wget
-# pip install termcolor
-# pip install py-cpuinfo
-# pip install psutil
-# pip install requests
-
-# Você precisa instalar Todos os Módulos Acima!
 
 SYSTEM = system()
 ARCHITECTURE = get_cpu_info()["bits"]
@@ -33,16 +23,16 @@ MEMORY_RAM_FREE = virtual_memory().available
 FORMAT_RAM_TOTAL = str(MEMORY_RAM_TOTAL)
 FORMAT_RAM_FREE = str(MEMORY_RAM_FREE)[0:3]
 
-def Verificar_Internet (url ='http://www.google.com'):
+def  Verificar_Internet  (url ='http://www.google.com'):
     try:
         CONECT = head(url)
         return True
 
     except requests.ConnectionError:
         return False
+    
 WI_FI = Verificar_Internet()
 
-# Start The Manager
 
 def Manager_Main ():
 	print(colored("[===========[ Painel de Controle MCinaBox v1.5 ]===========]",'white',attrs=["bold"]))
@@ -238,7 +228,7 @@ def Manager_Main ():
 		print(colored("\nMCinaBox Manager foi Construido na intenção de ajudar a deixar o lançador mais rápido é deixa-lo mais organizado, o código fará com que exclua e adicione Items e pastas para deixar o MCinaBox mais ágil, em breve será adicionado mais Funções, acessando nosso Site na GitHub você pode mencionar um Bug ou até mesmo instalar as versões mais Recentes do Código!","white"))
 		
 		print(colored("\nDesenvolvedor: MatheusTGamerPro ",'green'))
-		print(colored("Versão: V1.0-Beta\n",'white'))
+		print(colored("Versão: V1.5.1-Beta\n",'white'))
 		
 		print(colored("[=======================================]",'white',attrs=["bold"]))
 		
@@ -254,7 +244,7 @@ def Manager_Main ():
 		print(colored("[=======================================]",'white',attrs=["bold"]))
 		print(colored("\nCarregando Informações do dispositivo...",'white',attrs=["bold"]))
 		sleep(1)
-		info = [SYSTEM, ARCHITECTURE, FORMAT_RAM_TOTAL, FORMAT_RAM_FREE]
+		info = [SYSTEM, ARCHITECTURE , FORMAT_RAM_TOTAL, FORMAT_RAM_FREE]
 		
 		print(colored(f'''\nSistema: {info[0]}-Android
 
@@ -320,14 +310,17 @@ Memória RAM Livre: {info[3][0:1]}.{info[3][0:2]}GB\n''','white'))
 		os.system('clear')
 		Manager_Main()
 sleep(1)
-print(colored("[ MCinaBox Manager - V1.5 ]\n",'white',attrs=["bold","underline"]))
+print(colored("[ MCinaBox Manager - V1.5.1-Beta ]\n",'white',attrs=["bold","underline"]))
 
 def Setup ():
+                      
 	directory_manager = r'/storage/emulated/0/MCinaBox_Manager'
 	
 	directory_optfine = r'/storage/emulated/0/MCinaBox_Manager/OptFines'
 
 	directory_installedMC = r'/storage/emulated/0/MCinaBox_Manager/MCinaBox_Installed'
+
+	directory_libraries = r'/storage/emulated/0/MCinaBox_Manager/libraries'
 
 	if os.path.exists(directory_manager):
 		Manager_Main()
@@ -340,16 +333,22 @@ def Setup ():
 			print(colored("[=======================================]",'white',attrs=["bold"]))
 			print(colored("\nAguarde, Fazendo a instalação do Gerenciador...",'green',attrs=["bold","underline"]))
 			sleep(1)
-			print(colored("\n[ 80% ] [ █████▒▒ ] : Gerando diretório primário...",'green',attrs=["bold"]))
+			print(colored("\n[ 46% ] [ █▒▒▒▒▒ ] : Gerando diretório primário...",'green',attrs=["bold"]))
 			
 			create_dir1 = makedirs(directory_manager)
 			
 			sleep(1)
-			print(colored("\n [ 93% ][ ██████▒ ] : Gerando Diretório do OptFine...",'green',attrs=["bold"]))
+			print(colored("\n [ 63% ][ ████▒▒▒ ] : Gerando Diretório do OptFine...",'green',attrs=["bold"]))
 			
 			create_dir2 = makedirs(directory_optfine)
+			sleep(2)
+			print(colored("\n [ 84% ][ █████▒▒ ] : Gerando Diretório do Arquivos..",'green',attrs=["bold"]))
 			create_dir3 = makedirs(directory_installedMC)
-			
+
+			sleep(2)
+			print(colored("\n [ 94% ][ ██████▒] : Criando Bibliotecas do Código...",'green',attrs=["bold"]))
+			create_dir4 = makedirs(directory_libraries)
+                                                
 			sleep(2)
 			print(colored("\n  [ 100%] [ ███████ ] : Instalação Finalizada.",'green',attrs=["bold"]))
 			print(colored("\nGerenciador foi instalado com sucesso!",'yellow',attrs=["bold"]))
@@ -365,9 +364,9 @@ def Setup ():
 			print(colored('Setup Instalador não finalizado.','red',attrs=["bold"]))
 			exit()
 
-		print(colored("MCinaBox Manager Instalado!",'green',attrs=["bold"])) # Corrigir erro do Bold
+		print(colored("MCinaBox Manager Instalado!",'green',attrs=["bold"]))
 		sleep(2)
 		os.system('clear')
-		Manager_Main()		
-
+		Manager_Main()
+    
 Setup()
