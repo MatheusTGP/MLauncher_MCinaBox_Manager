@@ -1,6 +1,8 @@
+[![MLauncher Updates in All Languages [PT, EN]](https://github.com/MatheusTGamerPro/MLauncher_MCinaBox_Manager/actions/workflows/%5B%20MLauncher_Run_Code%20%5D.yml/badge.svg)](https://github.com/MatheusTGamerPro/MLauncher_MCinaBox_Manager/actions/workflows/%5B%20MLauncher_Run_Code%20%5D.yml)
 ![Github Code](https://img.shields.io/static/v1?label=Compatibilidade&message=Android&color=blue)
 ![Github Code](https://img.shields.io/static/v1?label=Python&message=100%&color=orange)
 ![Github Code](https://img.shields.io/static/v1?label=Versão-Atual&message=1.5-Release&color=magenta)
+
 <a href="https://discord.gg/NTAAMC6TYu" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
 
 # ⚠️ | MLauncher - MCinaBox Manager
