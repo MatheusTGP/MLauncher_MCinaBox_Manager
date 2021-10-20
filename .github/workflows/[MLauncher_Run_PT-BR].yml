@@ -1,4 +1,4 @@
-name: Construir Arquivo do Gerenciador
+name: Construir Arquivo do MLauncher em PT-BR
 
 on: [push]
 
@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Instalar Python 3.9 na Máquina
+    - name: Instalar Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
@@ -20,8 +20,9 @@ jobs:
         pip install termcolor
         pip install psutil
         pip install py-cpuinfo
-    - name: Construir Artefato do MCinaBox_Manager
+        pip install requests
+    - name: Construir Artefato do MLauncher em PT-BR
       uses: actions/upload-artifact@v2
       with:
-          name: MCinaBox_Manager_Debug
-          path: MCinaBox-Manager.py
+          name: MCinaBox_Manager_Debug_PT-BR
+          path: MLauncher_MCinaBox-BR.py
