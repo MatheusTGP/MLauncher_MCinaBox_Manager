@@ -118,4 +118,13 @@ Para um novo desenvolvimento do MCinaBox!
 - [ ] Instador de Mods
 - [x] Execuçao do código pelo Android: [Download](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3)
 
+# 🔑 Versões Atuais e Futuras
+**Versões em lançamento e lançadas**
+- [x] 1.0
+- [x] 1.5.0
+- [x] 1.5.1
+- [ ] 2.0 (Otimizada, em lançamento...)
+- [ ] 2.5 (Otimizada, em Lançamento...)
+- [ ] 3.0 (...)
+
 Novas funcionalidades serão implementadas em breve
