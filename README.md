@@ -13,10 +13,10 @@ Gerenciador e Organizador com muitas funções inclusas funcionando para MCinabo
 
 🇪🇸 • **¡Traduzca la página a su idioma nativo para una mejor experiencia!**
 
-🇺🇸 • **About the Code:** For the time being the Code is in the developed Language: **PT-BR**,
+🇺🇸 • **About the Code:** For the time being the Code is in the developed Language: **PT-BR**,**EN-US**,
  The code translation will be done for everyone to use without problems!
 
-🇪🇸 • **Acerca del Código:** Por el momento, el Código está en el Idioma desarrollado: **PT-BR**,
+🇪🇸 • **Acerca del Código:** Por el momento, el Código está en el Idioma desarrollado: **PT-BR**,**EN-US**,
   ¡La traducción del código se hará para que todos la utilicen sin problemas!
 
 # ❗ | Como Funciona?
