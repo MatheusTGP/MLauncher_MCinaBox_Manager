@@ -118,7 +118,7 @@ Para um novo desenvolvimento do MCinaBox!
 - [ ] Instador de Mods
 - [x] Execuçao do código pelo Android: [Download](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3)
 
-# 🔑 Versões Atuais e Futuras
+# ✔️ | Versões Atuais e Futuras
 **Versões em lançamento e lançadas**
 - [x] 1.0
 - [x] 1.5.0
@@ -126,5 +126,14 @@ Para um novo desenvolvimento do MCinaBox!
 - [ ] 2.0 (Otimizada, em lançamento...)
 - [ ] 2.5 (Otimizada, em Lançamento...)
 - [ ] 3.0 (...)
+# 🔑 | Componentes e Bibliotecas
 
-Novas funcionalidades serão implementadas em breve
+- [Psutil](https://pypi.org/project/psutil/) - Cross-platform lib for process and system monitoring in Python.
+
+- [Wget](https://pypi.org/project/wget/) - pure python download utility
+
+- Termcolor - simple termcolor wrapper
+
+- [cpuinfo](https://pypi.org/project/py-cpuinfo/) - Get CPU info with pure Python 2 & 3
+
+- [requests](https://pypi.org/project/requests/) - Python HTTP for Humans.
