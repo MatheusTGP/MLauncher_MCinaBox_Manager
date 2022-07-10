@@ -3,7 +3,7 @@
 ![Github Code](https://img.shields.io/static/v1?label=Python&message=100%&color=orange)
 ![Github Code](https://img.shields.io/static/v1?label=Versão-Atual&message=1.5.1Beta-Release&color=magenta)
 
-<a href="https://discord.gg/NTAAMC6TYu" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
+<h1 align="center">🎯 This project is no longer being built :/ </h1>
 
 # ⚠️ | MLauncher - MCinaBox Manager
 Gerenciador e Organizador com muitas funções inclusas funcionando para MCinabox, instale OptFine, Otimizador, Limpeza e entre outras coisas do Gerenciador! Disponível em PT-BR e EN-US mais em breve..
