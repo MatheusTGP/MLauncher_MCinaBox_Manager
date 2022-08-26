@@ -5,12 +5,13 @@
 # NOT remove the Crédits
 
 import sys
+import os
+import shutil
 from psutil import virtual_memory
 from termcolor import colored
 from wget import download
-import os
+from os import system as console
 from os import makedirs
-import shutil
 from time import sleep
 from cpuinfo import get_cpu_info
 from platform import system
@@ -23,7 +24,7 @@ MEMORY_RAM_FREE = virtual_memory().available
 FORMAT_RAM_TOTAL = str(MEMORY_RAM_TOTAL)
 FORMAT_RAM_FREE = str(MEMORY_RAM_FREE)[0:3]
 
-def  Check_Connection  (url ='http://www.google.com'):
+def Check_Connection(url ='http://www.google.com'):
     try:
         CONECT = head(url)
         return True
@@ -34,7 +35,7 @@ def  Check_Connection  (url ='http://www.google.com'):
 WI_FI = Check_Connection()
 
 
-def Manager_Main ():
+def Manager_Main():
 	print(colored("[===========[ MCinaBox v1.5 Control Panel ]===========]",'white',attrs=["bold"]))
 	
 	print(colored("\n[1] - Install MCinaBox",'green'))
@@ -95,12 +96,12 @@ def Manager_Main ():
 					print(colored("\n[ Finish ] [ Info-Installer_x32 ] : MCinaBox Download Completed.",'green'))
 					print(colored("[=======================================]",'white',attrs=["bold"]))
 					sleep(2)
-					os.system('clear')
+					console('clear')
 					Manager_Main()
 				elif WI_FI == False:
 					print(colored("\nError: You are not connected to the internet, returning...",'red',attrs=["bold"]))
 					sleep(5)
-					os.system('clear')
+					console('clear')
 					Manager_Main()
 
 			elif ARCHITECTURE == 64:
@@ -124,16 +125,16 @@ def Manager_Main ():
 					elif WI_FI == False:
 						print(colored("\nError: You are not connected to the internet, returning...",'red',attrs=["bold"]))
 						sleep(5)
-						os.system('clear')
+						console("clear")
 						Manager_Main()
 					print(colored("[=======================================]",'white',attrs=["bold"]))
 					sleep(2)
-					os.system('clear')
+					console('clear')
 					Manager_Main()
 		elif confirm_install == "n":
 			print("Installation Canceled, Returning...")
 			sleep(1)
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 
 	elif select == 2:
@@ -153,18 +154,18 @@ def Manager_Main ():
 				print(colored("[=======================================]",'white',attrs=["bold"]))
 				
 				sleep(2)
-				os.system('clear')
+			        console('clear')
 				Manager_Main()
 			else:
 				print(colored("\nNo to Log Records!",'red',attrs=["bold"]))
 				print(colored("[=======================================]",'white',attrs=["bold"]))
 				sleep(2)
-				os.system('clear')
+				console('clear')
 				Manager_Main()
 		else:
 				print("User Canceled the operation!")
 				sleep(1)
-				os.system('clear')
+				console('clear')
 				Manager_Main()
 				
 				sleep(1)
@@ -187,12 +188,12 @@ def Manager_Main ():
 				print(colored("MCinaBox Directory already exists!",'red',attrs=["bold"]))
 				print(colored("[=======================================]",'white',attrs=["bold"]))
 				sleep(2)
-				os.system('clear')
+				console('clear')
 				Manager_Main()
 		else:
 			print("The User canceled the operation, returning!")
 			sleep(1)
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 	elif select == 4:
 		print(colored("[=======================================]",'white',attrs=["bold"]))
@@ -210,14 +211,14 @@ def Manager_Main ():
 			print(colored("\nMCinaBox Folder Deleted!","red",attrs=["bold"]))
 			print(colored("[=======================================]",'white',attrs=["bold"]))
 			sleep(2)
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 
 		elif delete_mcinabox == "n":
 			print("Canceled, Thanks for choosing!\n")
 			print(colored("[=======================================]",'white',attrs=["bold"]))
 			sleep(1)
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 			
 	elif select == 5:
@@ -234,7 +235,7 @@ def Manager_Main ():
 		
 		back = input("To go back type 'back':")
 		if back == "back":
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 		else:
 			print("User Chose to Cancel")
@@ -256,12 +257,12 @@ Free RAM Memory: {info[3][0:1]}.{info[3][0:2]}GB\n''','white'))
 		print(colored("[=======================================]",'white',attrs=["bold"]))
 		back = input(colored("To return to the menu type 'back': ",'yellow',attrs=["bold"]))
 		if back == "back":
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 		else:
 			print("User Chose to Cancel")
 			sleep(2)
-			os.system('clear')
+			console('clear')
 			Manager_Main()
 
 		print(colored("[=======================================]",'white',attrs=["bold"]))
@@ -271,7 +272,7 @@ Free RAM Memory: {info[3][0:1]}.{info[3][0:2]}GB\n''','white'))
 		sleep(1)
 		print(colored("Sorry! this function has not yet been implemented wait for the next update.",'red',attrs=["bold"]))
 		sleep(2)
-		os.system('clear')
+		console('clear')
 		Manager_Main()
 		
 	elif select == 8:
@@ -293,12 +294,12 @@ Free RAM Memory: {info[3][0:1]}.{info[3][0:2]}GB\n''','white'))
 			print(colored("\nSee you next time, Back to the Lobby...",'green',attrs=["bold"]))
 			print(colored("[=======================================]",'white',attrs=["bold"]))
 			sleep(2)
-			os.system('clear')
+			console('clear')
 			Setup()
 		elif uninstall_confirm == "n":
 			print(colored("\nThanks for choosing! Returning...",'green',attrs=["bold"]))
 			sleep(2)
-			os.system('clear')
+			console('clear')
 			Manager_Main()		
 		
 	elif select == 9:
@@ -307,7 +308,7 @@ Free RAM Memory: {info[3][0:1]}.{info[3][0:2]}GB\n''','white'))
 	elif select > 9:
 		print(colored("This Option does not exist\n",'red',attrs=["bold"]))
 		sleep(1)
-		os.system('clear')
+		console('clear')
 		Manager_Main()
 sleep(1)
 print(colored("[ MCinaBox Manager - V1.5.1-Beta]\n",'white',attrs=["bold","underline"]))
@@ -336,7 +337,6 @@ def Setup ():
 			print(colored("\n[ 46% ] [ █▒▒▒▒▒ ] : Generating primary directory....",'green',attrs=["bold"]))
 			
 			create_dir1 = makedirs(directory_manager)
-			
 			sleep(1)
 			print(colored("\n [ 63% ][ ████▒▒▒ ] : Generating OptFine Directory....",'green',attrs=["bold"]))
 			
@@ -353,12 +353,12 @@ def Setup ():
 			print(colored("\n  [ 100%] [ ███████ ] : Installation Completed.",'green',attrs=["bold"]))
 			print(colored("\nManager has been successfully installed!",'yellow',attrs=["bold"]))
 			print(colored("[=======================================]",'white',attrs=["bold"]))
-			confirm_startup = input(colored("Do you want to open the Menu? [y/n]: ",'yellow',attrs=["bold"]))
-			if confirm_startup == "s":
-				os.system('clear')
+			open_menu = input(colored("Do you want to open the Menu? [y/n]: ",'yellow',attrs=["bold"]))
+			if open_menu == "s":
+				console('clear')
 				Manager_Main()
-			elif confirm_startup == "n":
-				print("Okay, When you want to login, just start the Code!")
+			else:
+			        print("Okay, When you want to login, just start the Code!")
 			
 		else:
 			print(colored('Setup Installer not finished.','red',attrs=["bold"]))
@@ -366,7 +366,7 @@ def Setup ():
 
 		print(colored("MCinaBox Manager Installed!",'green',attrs=["bold"]))
 		sleep(2)
-		os.system('clear')
+		console('clear')
 		Manager_Main()
     
 Setup()
