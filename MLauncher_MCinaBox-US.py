@@ -17,6 +17,8 @@ from cpuinfo import get_cpu_info
 from platform import system
 from requests import head
 
+from MLauncherManager import MLauncherManager
+
 SYSTEM = system()
 ARCHITECTURE = get_cpu_info()["bits"]
 MEMORY_RAM_TOTAL = virtual_memory().total
